@@ -1,0 +1,343 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --HeightName : 30px;
+  --TextSoft : #676a70;
+  --Text : #1c2025;
+
+  --Back1 : #2d3038;
+  --Back2 : #1c2025;
+  --StarsColor: #ffcc34;
+  --TitleHeight : 40px;
+  --RatioTitle : calc(var(--TitleHeight) - var(--HeightName));
+  --Perspective : 3000px
+}
+
+*{
+  box-sizing: border-box;
+  font-family: "Genshin";
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.TeamContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.TeamContainer h4 {
+  min-width: 100%;
+  font-size: 1.2em;
+  margin: 15px 0 0 0;
+  text-align: center;
+}
+
+/* HOME CHARACTER */
+
+.Card{
+  width: 120px;
+  height: 150px;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all .6s ease;
+  margin: 10px;
+}
+
+.Card:hover {
+  transform: rotateY(180deg);
+  /* box-shadow: -5px 5px 5px #aaa; */
+}
+
+.CharacterList{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.Character{
+  display: flex;
+    flex-direction: column;    
+    width: 120px;
+    height: 150px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    justify-content: space-between;
+    cursor: pointer;
+    backface-visibility: hidden;
+}
+
+.CharacterSmall{
+  width: 100px;
+  height: 130px;
+}
+
+.CharacterType{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.CharacterImage{
+  width: 100%;
+  height: calc(100% - var(--HeightName));
+  position: relative;
+  display: flex;
+  align-items: self-end;
+  justify-content: center;
+  /* margin-top: var(--TitleHeight); */
+}
+
+.CharacterMini{
+  width: auto;
+  height: 100%;
+}
+
+.CharacterName{
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 5px;
+  height: var(--HeightName);
+}
+
+.CharacterName span{
+  /* position: absolute;
+  line-height: 0px;
+  top: 0; */
+  position: absolute;
+  top: -9px;
+  font-size: 16px;
+  z-index: 1;
+  color: var(--StarsColor);
+  letter-spacing: -8px;
+}
+
+.CharacterName span svg{
+  margin: -2px;
+}
+
+.CharacterName h2{
+  margin: 0;
+  font-size: .775em;
+  text-align: center;
+  /* text-overflow: ellipsis; */
+  overflow: hidden;
+  width: 89%;
+  white-space: nowrap;
+}
+
+.CharacterName #top {
+  position: absolute;
+  height: 20px;
+  width: 30px;
+  right: 0;
+  bottom: var(--HeightName);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.CharacterName #top::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  height: 200%;
+  width: 200%;
+  border-radius: 100%;
+  box-shadow: 10px 10px 5px 100px white;
+  z-index: -1;
+  top: -100%;
+}
+
+.TitleBuild {
+  position: absolute;
+    z-index: -1;
+    background: white;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    font-size: 8pt;
+    line-height: initial;
+    padding: 4px;
+    min-height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+.TitleBuild .BuildData h5{
+  margin: 0;
+  font-size: 1.1675em;
+}
+
+.TitleBuild .BuildData span{
+  display: block;
+  font-size: 1em;
+}
+
+.TitleBuild .BuildData{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.FlexContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.FlexContainer h4{
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.Info{
+  color: red;
+}
+
+#liste-0{
+  opacity: 0.1;
+  perspective: var(--Perspective);
+}
+#liste-1{
+  opacity: 0.2;
+  perspective: var(--Perspective);
+}
+#liste-2{
+  opacity: 0.5;
+  perspective: var(--Perspective);
+}
+#liste-3{
+  opacity: 0.75;
+  perspective: var(--Perspective);
+}
+#liste-4{
+  opacity: 1;
+  perspective: var(--Perspective);
+}
+
+
+/* Genshin CSS */
+
+@font-face {
+  font-family: 'Genshin';
+  src: url(https://api.lucasarts.fr/genshin/font/genshinv4.woff) format('woff');
+  font-style:normal;
+  font-weight:normal;
+  font-display:swap
+}
+
+.InputContainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  max-width: 320px;
+  min-width: 280px;
+  width: fit-content;
+}
+
+.Detail {
+  align-items: center;
+  background: #c6c9b9;
+  border-bottom-left-radius: 100px;
+  border-top-left-radius: 100px;
+  display: flex;
+  flex-basis: 50%;
+  justify-content: flex-start;
+  padding: 4px 0 4px 12px!important;
+}
+
+.Detail, input[type=number], input[type=text], select {
+  color: #485060;
+  flex: 1 1;
+  font-size: 9pt;
+  height: 30px;
+  position: relative;
+}
+
+input[type=number], input[type=text], select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #baafa0;
+  border: none;
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100px;
+  margin: 0;
+  max-width: 50%;
+  padding: 4px 6px!important;
+  pointer-events: all!important;
+  text-align: center;
+}
+
+.StarDeco, .StarDecoB {
+  color: #b1a595;
+  font-size: 22pt;
+  position: absolute;
+  right: 0;
+  -webkit-transform: translate(50%);
+  transform: translate(50%);
+  z-index: 99;
+}
